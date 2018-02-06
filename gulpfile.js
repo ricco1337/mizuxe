@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
+const ghPages = require('gulp-gh-pages');
+
 
 // Compile Sass & Inject Into browser
 gulp.task('sass', function(){
@@ -10,11 +12,8 @@ gulp.task('sass', function(){
     .pipe(browserSync.stream());
 });
 
-var gulp = require('gulp');
-var ghPages = require('gulp-gh-pages');
-
 gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
+  return gulp.src('./index.html/**/*')
     .pipe(ghPages());
 });
 
