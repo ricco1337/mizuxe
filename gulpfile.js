@@ -21,7 +21,7 @@ gulp.task('js', function(){
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./index.html/**/*')
+  return gulp.src('./index.html')
     .pipe(ghPages());
 });
 // Watch Sass & Server
