@@ -1,8 +1,8 @@
-const gulp = require('gulp');
+var gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const ghPages = require('gulp-gh-pages');
-var deploy      = require('gulp-gh-pages');
+var deploy = require('gulp-gh-pages');
 
 /**
  * Push build to gh-pages
