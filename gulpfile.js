@@ -3,6 +3,10 @@ const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
 const ghPages = require('gulp-gh-pages');
 
+gulp.task('deploy', function() {
+  return gulp.src('./index.html/**/*')
+    .pipe(ghPages());
+});
 
 // Compile Sass & Inject Into browser
 gulp.task('sass', function(){
@@ -41,8 +45,5 @@ gulp.task('fa', function(){
     .pipe(gulp.dest("src/css"));
 });
 
-gulp.task('deploy', function() {
-  return gulp.src('./index.html/**/*')
-    .pipe(ghPages());
-});
+
 gulp.task('default', ['js', 'serve', 'fa', 'fonts']);
