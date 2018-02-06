@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const browserSync = require('browser-sync').create();
 const sass = require('gulp-sass');
+const ghPages = require('gulp-gh-pages');
 
 
 
@@ -20,10 +21,9 @@ gulp.task('js', function(){
 });
 
 gulp.task('deploy', function() {
-  return gulp.src('./index.html/**/*')
+  return gulp.src('./index.html/*')
     .pipe(ghPages());
 });
-
 // Watch Sass & Server
 gulp.task('serve', ['sass'], function(){
   browserSync.init({
