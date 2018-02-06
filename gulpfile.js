@@ -20,10 +20,7 @@ gulp.task('js', function(){
     .pipe(browserSync.stream());
 });
 
-gulp.task('deploy', function() {
-  return gulp.src('index.html')
-    .pipe(ghPages());
-});
+
 // Watch Sass & Server
 gulp.task('serve', ['sass'], function(){
   browserSync.init({
@@ -46,5 +43,8 @@ gulp.task('fa', function(){
     .pipe(gulp.dest("src/css"));
 });
 
-
+gulp.task('deploy', function() {
+  return gulp.src('index.html')
+    .pipe(ghPages());
+});
 gulp.task('default', ['js', 'serve', 'fa', 'fonts']);
